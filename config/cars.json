@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "note": "车辆清单配置：新增车辆直接往 cars 里加一条；visible=false 的车辆不会出现在展厅，也不会加载其模型分包。model 为空表示暂无车模（展厅显示占位剪影）。",
+  "cars": [
+    {
+      "id": "su7",
+      "name": "SU7",
+      "cn": "闪电原型",
+      "sub": "WILL MOTORS · EVAL-01",
+      "visible": true,
+      "avail": true,
+      "yawFix": -1.5707963267948966,
+      "model": { "pkg": "res", "file": "res/su7_mini.glb" },
+      "tags": ["纯电超跑", "后驱", "氮气漂移"],
+      "desc": "为街道赛打造的原型车。低重心、高转速电机，漂移过弯即可集气，出弯喷射加速。",
+      "spec": [["极速", "195", "KM/H"], ["0-100", "2.9", "S"], ["功率", "495", "KW"], ["驱动", "后驱", ""]],
+      "stats": [["极速", 0.84], ["加速", 0.92], ["操控", 0.78], ["漂移", 0.9], ["氮气", 0.72]],
+      "physics": { "vmax": 62, "accel": 15, "brakeForce": 34, "steerMax": 0.44, "grip": 9.0, "aLat": 28, "aDrift": 62, "wheelbase": 2.7 }
+    },
+    {
+      "id": "willgt",
+      "name": "WILL GT",
+      "cn": "威路 GT",
+      "sub": "WILL MOTORS · GT-02",
+      "visible": true,
+      "avail": true,
+      "yawFix": 0,
+      "paint": 14673128,
+      "model": { "pkg": "res2", "file": "res2/will_GT_mini.glb" },
+      "tags": ["混动旗舰", "四驱", "弹射起步"],
+      "desc": "Will GP 车队的旗舰赛车。更强下压力与四驱牵引，出弯加速更凶猛，为刷新圈速纪录而生。",
+      "spec": [["极速", "268", "KM/H"], ["0-100", "2.4", "S"], ["功率", "620", "KW"], ["驱动", "四驱", ""]],
+      "stats": [["极速", 0.96], ["加速", 0.98], ["操控", 0.88], ["漂移", 0.92], ["氮气", 0.9]],
+      "physics": { "vmax": 74, "accel": 18.5, "brakeForce": 38, "steerMax": 0.46, "grip": 9.8, "aLat": 32, "aDrift": 70, "wheelbase": 2.75 }
+    },
+    {
+      "id": "gt1",
+      "name": "???",
+      "cn": "神秘赛车",
+      "sub": "LOCKED",
+      "visible": true,
+      "avail": false,
+      "yawFix": 0,
+      "model": null,
+      "tags": ["未解锁"],
+      "desc": "完成赛事后解锁。",
+      "spec": [["极速", "--", ""], ["0-100", "--", ""], ["功率", "--", ""], ["驱动", "--", ""]],
+      "stats": [["极速", 0], ["加速", 0], ["操控", 0], ["漂移", 0], ["氮气", 0]],
+      "physics": { "vmax": 62, "accel": 15, "brakeForce": 34, "steerMax": 0.44, "grip": 9.0, "aLat": 28, "aDrift": 60, "wheelbase": 2.7 }
+    }
+  ]
+}

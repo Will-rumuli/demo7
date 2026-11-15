@@ -1,0 +1,14 @@
+{
+  "deviceOrientation": "landscape",
+  "showStatusBar": false,
+  "subpackages": [
+    {
+      "name": "res",
+      "root": "res/"
+    },
+    {
+      "name": "res2",
+      "root": "res2/"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Will GP · dev-test</title>
+<style>
+  html, body { margin: 0; width: 100%; height: 100%; background: #04070b; overflow: hidden; }
+  #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  #err { display: none; position: fixed; left: 8px; right: 8px; top: 8px; z-index: 10;
+    background: rgba(0,0,0,.85); color: #ff4d6d; font: 12px/1.5 monospace; padding: 10px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+<div id="err"></div>
+<script>
+  window.__ERRORS__ = [];
+  window.__ERR_EL__ = document.getElementById('err');
+  function showErr(msg) {
+    window.__ERRORS__.push(msg);
+    var el = window.__ERR_EL__;
+    if (!el) return;
+    el.style.display = 'block';
+    el.textContent = window.__ERRORS__.join('\n\n');
+  }
+  window.onerror = function (msg, src, line, col, err) {
+    showErr((err && err.stack) || (msg + ' @ ' + src + ':' + line));
+  };
+  window.addEventListener('unhandledrejection', function (e) {
+    showErr('Promise: ' + (e.reason && (e.reason.stack || e.reason.message) || e.reason));
+  });
+</script>
+<script src="wx-mock.js"></script>
+<script src="loader.js"></script>
+</body>
+</html>
